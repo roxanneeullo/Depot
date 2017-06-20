@@ -1,3 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dewpowt</title>
+  <%= stylesheet_link_tag    'pagination', media: 'all', 'data-turbolinks-track' => true %>
+  
+  <%= csrf_meta_tags %>
+</head>
 <h1>Listing products</h1>
 
 <table>
@@ -24,3 +32,7 @@
 </table> 
 <br />
 <%= link_to 'New product', new_product_path %>
+
+<%= will_paginate @products %>
+
+</html>
