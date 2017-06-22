@@ -1,11 +1,12 @@
 class CartsController < ApplicationController
-  skip_before_action :authorize, only: [:create, :update, :destroy]
+ # skip_before_action :authenticate_user!, only: [:create, :update, :destroy]
+ skip_before_action :authenticate_user!
   before_action :set_cart, only: [:show, :edit, :update, :destroy]
   rescue_from ActiveRecord::RecordNotFound, with: :invalid_cart # GET /carts
   # GET /carts
   # GET /carts.json
   def index
-    @carts = Cart.paginate(:page => params[:page], :per_page => 3)
+    @carts = Cart.paginate(:page => params[:page])
     
   end
 

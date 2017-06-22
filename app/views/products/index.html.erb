@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Dewpowt</title>
-  <%= stylesheet_link_tag    'pagination', media: 'all', 'data-turbolinks-track' => true %>
-  
-  <%= csrf_meta_tags %>
-</head>
-<h1>Listing products</h1>
+<h1>Listing Products</h1>
 
 <table>
 <% @products.each do |product| %>
@@ -18,7 +10,7 @@
 			<div id="desc">
 			<dl>
 				<dt><%= product.title %></dt>
-				<dd><%= truncate(strip_tags(product.description), length: 80) %></dd> 			</dl>
+				<dd><%= truncate(strip_tags(product.description), length: 80) %></dd> </dl>
 			</div>
 		</td>
 		<td class="list_actions">
@@ -34,5 +26,3 @@
 <%= link_to 'New product', new_product_path %>
 
 <%= will_paginate @products %>
-
-</html>

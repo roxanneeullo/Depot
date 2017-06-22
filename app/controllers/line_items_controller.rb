@@ -1,5 +1,6 @@
 class LineItemsController < ApplicationController
-  skip_before_action :authorize, only: :create
+  #skip_before_action :authenticate_user!, only: :create
+  skip_before_action :authenticate_user! 
   include CurrentCart
   before_action :set_cart, only: [:create]
   before_action :set_line_item, only: [:show, :edit, :update, :destroy]
@@ -7,7 +8,7 @@ class LineItemsController < ApplicationController
   # GET /line_items
   # GET /line_items.json
   def index
-    @line_items = LineItem.paginate(:page => params[:page], :per_page => 3)
+    @line_items = LineItem.paginate(:page => params[:page])
   end
 
   # GET /line_items/1

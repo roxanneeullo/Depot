@@ -44,3 +44,8 @@ gem 'haml', '~> 4.0'
 gem 'kaminari', '~> 0.14'
 
 gem 'will_paginate', '~> 3.1.0'
+
+gem 'devise'
+
+gem 'protected_attributes'
+
